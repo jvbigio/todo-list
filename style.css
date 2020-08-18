@@ -74,14 +74,15 @@ li {
   overflow: scroll;
   align-items: center;
   /* justify-content: center; */
-  border-bottom: 1px solid orange;
+  /* border-bottom: 1px solid orange; */
 }
 
 .deleteButton {
-  display: flex;
+  /* display: flex; */
   border: none;
   color: whitesmoke;
   background-color: #222930;
+  margin-left: auto;
 }
 
 span {
