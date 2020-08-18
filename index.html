@@ -6,9 +6,31 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>To-do List</title>
   <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Pangolin&display=swap" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/e51c99212f.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
+  <div class="container">
+    <h1>To-do List</h1>
+    <form action="">
+      <!-- container div for Flexbox: -->
+      <div class="form-row">
+        <!-- <label for="task">Enter a Task:</label> -->
+        <input type="text" id="task" placeholder="Enter Task Here">
+      </div>
+    </form>
+    <div class="task-list-container">
+      <div class="tasks">
+        <ul>
+          <li>Exercise <span> <button class="deleteButton"><i class="far fa-trash-alt"></i></button> </li></span>
+          <li>Study <button class="deleteButton"><i class="far fa-trash-alt"></i></button> </li>
+          <li>Walk <button class="deleteButton"><i class="far fa-trash-alt"></i></button> </li>
+          <li>Qigong <button class="deleteButton"><i class="far fa-trash-alt"></i></button> </li>
+        </ul>
+      </div>
+    </div>
+  </div>
   <script src="app.js"></script>
 </body>
 
