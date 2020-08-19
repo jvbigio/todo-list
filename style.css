@@ -85,9 +85,14 @@ li {
   margin-left: auto;
 }
 
-span {
-  display: flex;
+.task-complete {
+  text-decoration: line-through;
+  text-decoration-color: #d49a3f;
 }
+
+/* span {
+  display: flex;
+} */
 
 /* 
 colors
