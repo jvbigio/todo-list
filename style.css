@@ -51,6 +51,7 @@ h1 {
   display: flex;
   justify-content: center;
   align-items: center;
+  overflow: scroll;
 }
 
 .tasks {
@@ -64,15 +65,20 @@ h1 {
   box-sizing: border-box;
 }
 
+
+
 li {
   list-style: none;
   display: flex;
   cursor: pointer;
   padding: 10px 0;
   width: 600px;
+  /* added for testing: */
+  /* flex-direction: column; */
+  /* testing */
+  /* justify-content: center; */
   /* border: 3px solid orange; */
-  overflow: scroll;
-  align-items: center;
+  align-items: center;h
   /* justify-content: center; */
   /* border-bottom: 1px solid orange; */
 }
