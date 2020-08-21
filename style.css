@@ -71,20 +71,24 @@ li {
   align-items: center;
 }
 
-/* .delete-button {
+.todo-border {
+  border-bottom: 1px solid #d49a3f;
+}
+
+.delete-button {
   border: none;
   color: whitesmoke;
   background-color: #222930;
   margin-left: auto;
-} */
-.delete-button {
+}
+/* .delete-button {
   border: none;
   color: whitesmoke;
   background-color: #222930;
   margin-left: auto;
   font-size: 16px;
   text-decoration: none;
-}
+} */
 
 .task-complete {
   text-decoration: line-through;

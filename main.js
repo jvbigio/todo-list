@@ -1,11 +1,12 @@
 const input = document.getElementById('task')
 const ul = document.querySelector('.task-item')
 input.addEventListener('keydown', addTodo)
-const li = document.querySelectorAll('.todo')
+// const li = document.querySelectorAll('.todo')
+let li
 
 function addTodo (e) {
   const userInput = e.target.value
-  const todoArray = []
+  // const todoArray = []
   if (e.key === 'Enter') {
     e.preventDefault()
     const li = document.createElement('li')
@@ -23,8 +24,8 @@ function addTodo (e) {
     //   ${userInput}
     //     <i class="far fa-trash-alt delete-button"></i>
     // </li>`
-
-    li.style.borderBottom = '1px solid #d49a3f'
+    li.classList.add('todo-border')
+    // li.style.borderBottom = '1px solid #d49a3f'
     li.addEventListener('click', (e) => {
       li.classList.toggle('task-complete')
     })
@@ -40,18 +41,22 @@ function addTodo (e) {
 //   })
 // }
 function deleteTodo (e) {
+  // const deleteButton = document.querySelector('.delete-button') // works
+  const deleteButton = document.querySelectorAll('.delete-button')
   if (!e.target.matches('.delete-button')) return
-  // console.log(e.target)
-  // ul.removeChild(li)
-  // ul.firstElementChild.innerHTML = ''
-  for (let i = 0; i < li.length; i++) {
-    if (li[i] === e.target) {
-      // li[i].innerHTML = ''
-      ul.innerHTML = ''
+  // deleteButton.parentElement.innerHTML = '' // works but first elem only
+  for (let i = 0; i < deleteButton.length; i++) {
+    // console.log(deleteButton[i])
+    if (deleteButton[i] === e.target) {
+      // deleteButton[i].parentNode.textContent = ''
+      document.querySelectorAll('.todo').innerHTML = ''
+      const todos = document.querySelectorAll('.todo')
+      for (let i = 0; i < todos.length; i++) {
+        todos[i].innerHTML = ''
+      }
     }
   }
-  // item.children.innerHTML = ''
-  // li.style.borderBottom = 'none'
+  // li.classList.remove('todo-border')
 }
 
 const deleteIcon = document.querySelector('.task-item')
