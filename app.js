@@ -3,10 +3,11 @@
 // when click a task add strike through
 // delete task when click delete icon
 const input = document.getElementById('task')
-const todo = document.querySelector('.todo')
 const ul = document.querySelector('.task-item')
-
-input.addEventListener('input', addTodo)
+const deleteBtn = document.querySelector('.deleteButton')
+const button = document.querySelector('button')
+// deleteBtn.addEventListener('click', deleteTodo)
+input.addEventListener('keydown', addTodo)
 // input.addEventListener('input', taskInput)
 
 // function addTodo (e) {
@@ -44,6 +45,7 @@ input.addEventListener('input', addTodo)
 // }
 function addTodo (e) {
   const userInput = e.target.value
+  const todoArray = []
   input.addEventListener('keydown', ({ key }) => {
     if (key === 'Enter') {
       event.preventDefault()
@@ -51,19 +53,32 @@ function addTodo (e) {
       ul.appendChild(li)
       li.innerText = userInput
       li.innerHTML = `<li class="todo">${userInput} <button class="deleteButton"><i class="far fa-trash-alt"></i></button> </li>`
+      // li.innerHTML = `<li class="todo">${userInput} <button class="deleteButton"><i class="far fa-trash-alt"></i></button> </li>`
       li.style.borderBottom = '1px solid #d49a3f'
-      // make input blank after entering task
-      clrInput()
       li.addEventListener('click', e => {
-        li.classList.toggle('task-complete')
+        // li.classList.toggle('task-complete')
       })
+      // clear input field after submission
+      input.value = ''
     }
   })
+  const deleteBtn = document.querySelector('.fa-trash-alt')
+  if (deleteBtn) {
+    // deleteBtn.addEventListener('click', deleteTodo)
+    deleteBtn.addEventListener('click', e => {
+      console.log('clicked')
+    })
+  }
 }
-// clear input field
-function clrInput () {
-  input.textContent = ''
-}
+// function deleteTodo (e) {
+//   console.log('Clicked')
+// }
+// // The easiest approach would be to just check that el is not null before adding an event listener:
+// var el = document.getElementById('overlayBtn')
+// if (el) {
+//   el.addEventListener('click', swapper, false)
+// }
+
 // function addTodo (e) {
 //   const userInput = document.getElementById('task').value
 //   input.addEventListener('keydown', ({ key }) => {
@@ -80,4 +95,3 @@ function clrInput () {
 //     }
 //   })
 // }
-
