@@ -81,27 +81,8 @@ li {
   background-color: #222930;
   margin-left: auto;
 }
-/* .delete-button {
-  border: none;
-  color: whitesmoke;
-  background-color: #222930;
-  margin-left: auto;
-  font-size: 16px;
-  text-decoration: none;
-} */
 
 .task-complete {
   text-decoration: line-through;
   text-decoration-color: #d49a3f;
 }
-
-/*
-colors
-main card color
-#222930
-task color:
-#d49a3f
-strike through color:
-rgb(65, 52, 32)
-
-*/
