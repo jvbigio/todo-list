@@ -1,6 +1,6 @@
 # todo-list
 
-A simple to-do app written in vanilla JavaScript, HTML, and CSS. Simply type a task in the input field and press the Enter key to add it. Tasks can be marked complete by clicking on each individual task or clicked again to mark incomplete. Delete a task by clicking the trash icon. 
+A simple to-do app written in vanilla JavaScript, HTML, and CSS. Simply type a task in the input field and press the Enter key to add it. Tasks can be marked complete by clicking on each individual task or clicked again to mark incomplete. Delete a task by clicking the trash icon.
 
 # Images
 
@@ -14,4 +14,8 @@ Tasks marked as complete:
 
 # Summary
 
-As a self-taught developer, I enjoy building applications on my own and solidify new concepts learned, as well as find new challenges to gain new insight and skills. Although this app is simple in design, I learned important JavaScript concepts, such as Event Delegation and how to create dynamic elmenets. 
+As a self-taught developer, I enjoy building applications on my own and solidify new concepts learned, as well as find new challenges to gain new insight and skills. Although this app is simple in design, I learned important JavaScript concepts, such as Event Delegation and how to create dynamic elements.
+
+# Author
+
+- _Joe Bigio_ Full-Stack Software Developer [Website](https://joebigio.netlify.app/) | [LinkedIn](https://www.linkedin.com/in/joelbigio/) | [GitHub](https://github.com/jvbigio)
