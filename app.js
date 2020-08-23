@@ -31,4 +31,5 @@ function deleteTodo (e) {
   li = e.target.closest('li')
   li.parentElement.removeChild(li)
   document.querySelector('.todo-border').classList.remove('todo-border')
+  // li.parentElement.classList.remove('todo-border')
 }

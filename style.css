@@ -48,6 +48,7 @@ h1 {
   justify-content: center;
   align-items: center;
   overflow: scroll;
+  padding-top: 50px;
 }
 
 .tasks {
@@ -66,13 +67,16 @@ li {
   list-style: none;
   display: flex;
   cursor: pointer;
-  padding: 10px 0;
+  /* padding: 10px 0; */
+  /* padding: 10px 5px 0 0; */
   width: 600px;
   align-items: center;
+
 }
 
 .todo-border {
   border-bottom: 1px solid #d49a3f;
+  padding: 10px 0;
 }
 
 .delete-button {
