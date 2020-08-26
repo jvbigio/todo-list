@@ -4,13 +4,15 @@ input.addEventListener('keydown', addTodo)
 let li = document.createElement('li')
 const deleteIcon = document.querySelector('.task-item')
 deleteIcon.addEventListener('click', deleteTodo)
-const savedTasks = localStorage.getItem('tasks')
+// convert string back to array
+const todoGetter = JSON.parse(localStorage.getItem('tasks'))
+let tasks
 
 function addTodo (e) {
   const userInput = e.target.value
   if (e.key === 'Enter') {
+    // validateForm()
     e.preventDefault()
-    const li = document.createElement('li')
     ul.appendChild(li)
     li.innerHTML = `
     <li class="todo">
@@ -20,24 +22,76 @@ function addTodo (e) {
       </button>
     </li>`
 
-    localStorage.setItem('tasks', li.innerHTML)
-
     li.classList.add('todo-border')
-    li.addEventListener('click', (e) => {
-      li.classList.toggle('task-complete')
-    })
+    taskSaver(userInput)
+    markComplete()
     input.value = ''
   }
 }
 
-if (savedTasks) {
-  li.innerHTML = savedTasks
-  li.classList.toggle('todo-border')
+function markComplete () {
+  ul.addEventListener('click', e => {
+    li = e.target.closest('li')
+    li.classList.toggle('task-complete')
+  })
 }
+
+function taskSaver (task) {
+  // if (todoGetter === null || todoArray.length === 0) {
+  if (!todoGetter) {
+    tasks = []
+  } else {
+    tasks = JSON.parse(localStorage.getItem('tasks'))
+  }
+  tasks.push(task)
+  localStorage.setItem('tasks', JSON.stringify(tasks))
+}
+
+function taskLoader () {
+  // if (todoGetter === null || todoArray.length === 0) {
+  if (!todoGetter) {
+    tasks = []
+  } else {
+    tasks = JSON.parse(localStorage.getItem('tasks'))
+  }
+  // keep:
+  tasks.forEach(task => {
+    console.log(task)
+    ul.appendChild(li)
+    ul.innerHTML += `
+    <li class="todo">
+      ${task}
+      <button class="delete-button">
+        <i class="far fa-trash-alt delete-button"></i>
+      </button>
+    </li>`
+    markComplete()
+    li.classList.add('todo-border')
+  })
+  // for (let i = 0; i < localStorage.length; i++) {
+  //   const key = localStorage.key(i)
+  //   console.log(`${key}: ${localStorage.getItem(key)}`)
+  // }
+}
+
+// function validateForm () {
+//   const x = document.forms.todoInput.fname.value
+//   return (x === '') ? alert('Input field cannot be blank') : false
+// }
+
+// function removeTodoLocalStorage () {
+//   if (li.classList.contains('task-complete')) {
+//     localStorage.removeItem('task')
+//   }
+// }
 
 function deleteTodo (e) {
   if (!e.target.matches('.delete-button')) return
   li = e.target.closest('li')
   li.parentElement.removeChild(li)
   document.querySelector('.todo-border').classList.remove('todo-border')
+  // remove deleted item from localStorage
+  // localStorage.removeItem('task')
 }
+
+taskLoader()
