@@ -61,15 +61,12 @@ h1 {
   box-sizing: border-box;
 }
 
-
-
 li {
   list-style: none;
   display: flex;
   cursor: pointer;
   width: 600px;
   align-items: center;
-
 }
 
 .todo-border {
