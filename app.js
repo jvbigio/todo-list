@@ -52,11 +52,11 @@ function taskLoader () {
     tasks = JSON.parse(localStorage.getItem('tasks'))
   }
   tasks.forEach(task => {
-    // console.log(task)
-    // console.log(tasks)
+    console.log(task)
+    console.log(tasks)
     ul.appendChild(li)
-    li.textContent += tasks
-    li.innerHTML += `
+    li.textContent = tasks
+    li.innerHTML = `
     <li class="todo">
       ${task}
       <button class="delete-button">
