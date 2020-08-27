@@ -1,9 +1,8 @@
 const input = document.getElementById('task')
-const ul = document.querySelector('.task-item')
 input.addEventListener('keydown', addTodo)
+const ul = document.querySelector('.task-item')
 const deleteIcon = document.querySelector('.task-item')
 deleteIcon.addEventListener('click', deleteTodo)
-const todoGetter = JSON.parse(localStorage.getItem('tasks'))
 
 function addTodo (e) {
   const userInput = e.target.value
@@ -40,6 +39,7 @@ function markComplete () {
 }
 
 function taskSaver (task) {
+  const todoGetter = JSON.parse(localStorage.getItem('tasks'))
   let tasks
   if (!todoGetter) {
     tasks = []
@@ -51,6 +51,7 @@ function taskSaver (task) {
 }
 
 function taskLoader () {
+  const todoGetter = JSON.parse(localStorage.getItem('tasks'))
   let tasks
   if (!todoGetter) {
     tasks = []
