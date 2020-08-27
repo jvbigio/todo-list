@@ -12,6 +12,10 @@ function addTodo (e) {
   const li = document.createElement('li')
 
   if (e.key === 'Enter') {
+    if (userInput === '') {
+      e.preventDefault()
+      return false
+    }
     e.preventDefault()
     ul.appendChild(li)
     li.innerHTML = `
