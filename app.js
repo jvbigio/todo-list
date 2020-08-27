@@ -5,12 +5,13 @@ input.addEventListener('keydown', addTodo)
 const deleteIcon = document.querySelector('.task-item')
 deleteIcon.addEventListener('click', deleteTodo)
 const todoGetter = JSON.parse(localStorage.getItem('tasks'))
-let tasks, li
+let tasks
 
 function addTodo (e) {
   const userInput = e.target.value
+  const li = document.createElement('li')
+
   if (e.key === 'Enter') {
-    // validateForm()
     e.preventDefault()
     ul.appendChild(li)
     li.innerHTML = `
@@ -29,6 +30,7 @@ function addTodo (e) {
 }
 
 function markComplete () {
+  let li
   ul.addEventListener('click', e => {
     li = e.target.closest('li')
     li.classList.toggle('task-complete')
@@ -52,11 +54,8 @@ function taskLoader () {
     tasks = JSON.parse(localStorage.getItem('tasks'))
   }
   tasks.forEach(task => {
-    console.log(task)
-    console.log(tasks)
+    const li = document.createElement('li')
     ul.appendChild(li)
-    li = document.createElement('li')
-
     li.textContent = tasks
     li.innerHTML = `
     <li class="todo">
@@ -70,12 +69,8 @@ function taskLoader () {
   })
 }
 
-// function validateForm () {
-//   const x = document.forms.todoInput.fname.value
-//   return (x === '') ? alert('Input field cannot be blank') : false
-// }
-
 function deleteTodo (e) {
+  let li
   if (!e.target.matches('.delete-button')) return
   li = e.target.closest('li')
   li.parentElement.removeChild(li)
