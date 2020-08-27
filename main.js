@@ -4,14 +4,14 @@ input.addEventListener('keydown', addTodo)
 let li = document.createElement('li')
 const deleteIcon = document.querySelector('.task-item')
 deleteIcon.addEventListener('click', deleteTodo)
-const todoGetter = JSON.parse(localStorage.getItem('tasks'))
+const savedTasks = localStorage.getItem('tasks')
 let tasks
 
 function addTodo (e) {
   const userInput = e.target.value
   if (e.key === 'Enter') {
-    // validateForm()
     e.preventDefault()
+    const li = document.createElement('li')
     ul.appendChild(li)
     li.innerHTML = `
     <li class="todo">
@@ -21,6 +21,7 @@ function addTodo (e) {
       </button>
     </li>`
 
+    // localStorage.setItem('tasks', userInput)
     taskSaver(userInput)
     li.classList.add('todo-border')
     markComplete()
@@ -28,15 +29,8 @@ function addTodo (e) {
   }
 }
 
-function markComplete () {
-  ul.addEventListener('click', e => {
-    li = e.target.closest('li')
-    li.classList.toggle('task-complete')
-  })
-}
-
 function taskSaver (task) {
-  if (!todoGetter) {
+  if (!tasks) {
     tasks = []
   } else {
     tasks = JSON.parse(localStorage.getItem('tasks'))
@@ -46,17 +40,15 @@ function taskSaver (task) {
 }
 
 function taskLoader () {
-  if (!todoGetter) {
+  if (!tasks) {
     tasks = []
   } else {
     tasks = JSON.parse(localStorage.getItem('tasks'))
   }
   tasks.forEach(task => {
-    // console.log(task)
-    // console.log(tasks)
+    console.log(task)
     ul.appendChild(li)
-    li.textContent += tasks
-    li.innerHTML += `
+    ul.innerHTML = `
     <li class="todo">
       ${task}
       <button class="delete-button">
@@ -68,10 +60,14 @@ function taskLoader () {
   })
 }
 
-// function validateForm () {
-//   const x = document.forms.todoInput.fname.value
-//   return (x === '') ? alert('Input field cannot be blank') : false
-// }
+function markComplete () {
+  ul.addEventListener('click', e => {
+    console.log('clicked')
+    li = e.target.closest('li')
+    console.log(li)
+    li.classList.toggle('task-complete')
+  })
+}
 
 function deleteTodo (e) {
   if (!e.target.matches('.delete-button')) return
