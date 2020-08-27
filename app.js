@@ -1,11 +1,11 @@
 const input = document.getElementById('task')
 const ul = document.querySelector('.task-item')
 input.addEventListener('keydown', addTodo)
-let li = document.createElement('li')
+// let li = document.createElement('li')
 const deleteIcon = document.querySelector('.task-item')
 deleteIcon.addEventListener('click', deleteTodo)
 const todoGetter = JSON.parse(localStorage.getItem('tasks'))
-let tasks
+let tasks, li
 
 function addTodo (e) {
   const userInput = e.target.value
@@ -55,6 +55,8 @@ function taskLoader () {
     console.log(task)
     console.log(tasks)
     ul.appendChild(li)
+    li = document.createElement('li')
+
     li.textContent = tasks
     li.innerHTML = `
     <li class="todo">
