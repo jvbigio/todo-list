@@ -2,6 +2,8 @@
 
 A simple to-do app written in vanilla JavaScript, HTML, and CSS. Simply type a task in the input field and press the Enter key to add it. Tasks can be marked complete by clicking on each individual task or clicked again to mark incomplete. Delete a task by clicking the trash icon.
 
+Click [here](https://jvbigio.github.io/todo-list/)
+
 # Images
 
 Screenshot showing a list of tasks:
