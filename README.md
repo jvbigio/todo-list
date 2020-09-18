@@ -20,4 +20,4 @@ As a self-taught developer, I enjoy building applications on my own and solidify
 
 # Author
 
-- _Joe Bigio_ Full-Stack Software Developer [Website](https://j-bigio-portfolio.netlify.app/) | [LinkedIn](https://www.linkedin.com/in/joelbigio/) | [GitHub](https://github.com/jvbigio)
+- _Joe Bigio_ Full-Stack Software Developer [Website](https://j-bigio-portfolio.netlify.app/) | [LinkedIn](https://www.linkedin.com/in/joelbigio/)
