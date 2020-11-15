@@ -4,15 +4,14 @@ A simple to-do app written in vanilla JavaScript, HTML, and CSS. Simply type a t
 
 Click [here](https://jvbigio.github.io/todo-list/)
 
-# Images
+#Images
+A list of tasks:
 
-Screenshot showing a list of tasks:
-
-![Image of a list of tasks](https://i.postimg.cc/fTd7X5bx/todo1.png)
+![todo](https://user-images.githubusercontent.com/43301741/99192776-c74d7880-2742-11eb-921c-fa7c688bb340.png)
 
 Tasks marked as complete:
 
-![Image of tasks marked complete](https://i.postimg.cc/xCdB44dZ/todo2.png)
+![todo-complete](https://user-images.githubusercontent.com/43301741/99192793-d6ccc180-2742-11eb-8877-ed3100bcb94f.png)
 
 # Summary
 

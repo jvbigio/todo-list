@@ -55,7 +55,6 @@ h1 {
 .tasks {
   font-size: 50px;
   padding: 20px;
-  /* display: flex; */
   flex-direction: column;
   justify-content: center;
   align-items: center;
